@@ -8,6 +8,26 @@
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="stylesheet" href="assets/style.css">
 
+    <script language="JavaScript">
+        function recebe(){
+                var name = document.getElementById("name");
+                var lastname = document.getElementById("lastname");
+                var email = document.getElementById("email");
+                var emailconfirm = document.getElementById("email_confirm");
+                var password = document.getElementById('password')
+                var day = document.getElementById("day");
+                var month = document.getElementById("month");
+                var year = document.getElementById("year");
+                var gender = document.getElementById("gender");
+
+                alert("Nome: "+name.value+"\nSobrenome: "+lastname.value+"\nEmail: "
+                +email.value+"\nConfirmação do Email: "+emailconfirm.value+"\nSenha: "
+                +password.value+"\nData de Nascimento: "+day.value+"/"+month.value+"/"
+                +year.value+"\nGênero: "+gender.value);
+
+            }
+    </script>
+
 </head>
 <body>
     
@@ -22,10 +42,9 @@
 
         <main>
 
-            <form>
 
                 <fieldset>
-
+                    <form id="form1" name="form1" method="post">
                     <legend>
 
                         <h2>Criar uma nova conta</h2>
@@ -35,30 +54,30 @@
 
 
                     <div class="first-inputs">
-                        <input type="text" name="name" placeholder="Nome" required>
-                        <input type="text" name="lastname" placeholder="Sobrenome" required>
+                        <input type="text" name="name" id="name" placeholder="Nome" required>
+                        <input type="text" name="lastname" id="lastname" placeholder="Sobrenome" required>
                     </div>
 
                     <div class="input-wrapper">
-                        <input type="email" name="email" placeholder="Email" required>
-                        <input type="email" name="email-confirm" required placeholder="Confirme seu Email">
-                        <input type="password" name="password" required placeholder="Senha">
+                        <input type="email" name="email" id="email" placeholder="Email" required>
+                        <input type="email" name="email_confirm" id="email_confirm" required placeholder="Confirme seu Email">
+                        <input type="password" name="password" id="password" required placeholder="Senha">
                     </div>
 
                     <div class="select-wrapper">
 
                         <label >Data de nascimento</label>
-                        <select name="day" class="day" id="" required>
+                        <select name="day" class="day" id="day" required>
                             <option value="" data-default disabled selected>dia</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
+                            <option value="01">1</option>
+                            <option value="02">2</option>
+                            <option value="03">3</option>
+                            <option value="04">4</option>
+                            <option value="05">5</option>
+                            <option value="06">6</option>
+                            <option value="07">7</option>
+                            <option value="08">8</option>
+                            <option value="09">9</option>
                             <option value="10">10</option>
                             <option value="11">11</option>
                             <option value="12">12</option>
@@ -83,23 +102,23 @@
                             <option value="31">31</option>
                         </select>
                          
-                        <select name="month" id="" required>
+                        <select name="month" id="month" required>
                             <option value="" data-default disabled selected>mês</option>
-                            <option value="1">Janeiro</option>
-                            <option value="2">Fevereiro</option>
-                            <option value="3">Março</option>
-                            <option value="4">Abril</option>
-                            <option value="5">Maio</option>
-                            <option value="6">Junho</option>
-                            <option value="7">Julho</option>
-                            <option value="8">Agosto</option>
-                            <option value="9">Setembro</option>
+                            <option value="01">Janeiro</option>
+                            <option value="02">Fevereiro</option>
+                            <option value="03">Março</option>
+                            <option value="04">Abril</option>
+                            <option value="05">Maio</option>
+                            <option value="06">Junho</option>
+                            <option value="07">Julho</option>
+                            <option value="08">Agosto</option>
+                            <option value="09">Setembro</option>
                             <option value="10">Outubro</option>
                             <option value="11">Novembro</option>
                             <option value="12">Dezembro</option>
                         </select>
 
-                        <select name="year" class="year" id="" required>
+                        <select name="year" class="year" id="year" required>
                             <option value="" data-default disabled selected>ano</option>
                             <option value="2023">2023</option>
                             <option value="2022">2022</option>
@@ -228,23 +247,24 @@
 
                     <div class="checkbox-wrapper">
 
-                        <div class="male"><input required type="radio" name="gender" id="gender" value="male" title="masculino">Masculino</div>
-                        <div class="female"><input required type="radio" name="gender" id="gender" value="female" title="feminino">Feminino</div>
-                        <div class="none"><input required type="radio" name="gender" id="gender" value="none" title="Prefiro Não Dizer">Não Dizer</div>
+                        <div class="male"><input required type="radio" name="gender" id="gender" value="Masculino" title="masculino">Masculino</div>
+                        <div class="female"><input required type="radio" name="gender" id="gender" value="Feminino" title="feminino">Feminino</div>
 
                     </div>
 
                     <div class="submit-wrapper">
 
-                        <input type="submit" value="Cadastre-se">
+                        <input type="button" form="form1" name="criar-conta" id="criar-conta"
+                         value="Cadastre-se" onclick="recebe()">
 
                     </div>
 
                     <a href=""><h4>Já tem uma conta?</h4></a>
 
+                </form>
                 </fieldset>
 
-             </form>
+             
             
 
         </main>
